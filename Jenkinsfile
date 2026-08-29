@@ -25,11 +25,11 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
                 script {
                     sh """
-                        echo "Building"
+                        npm install
                     """
                 }
             }

@@ -43,9 +43,11 @@ pipeline {
                 script {
                     // Initialize the AWS context using your Jenkins credential ID
                 withAWS(credentials: 'aws-cred', region: 'us-east-1') {
+                    sh """
                     aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com
                     docker build -t ${acc_id}.dkr.ecr.us-east-1.amazonaws.com/${project}/${component}:${appVersion} .
                     docker push ${acc_id}.dkr.ecr.us-east-1.amazonaws.com/${project}/${component}:${appVersion}
+                    """
                 }
             }
         }

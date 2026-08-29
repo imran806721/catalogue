@@ -4,6 +4,9 @@ pipeline {
             label 'ROBOSHOP'
         }
     }
+    environment {
+        def appVersion = ""
+    }
 
     options {
         disableConcurrentBuilds()
@@ -15,7 +18,7 @@ pipeline {
             steps {
                 script {
                     def packageJson = readJSON file: 'package.json'
-                    def appVersion = packageJson.version
+                    appVersion = packageJson.version
 
                     echo "The application version is: ${appVersion}"
                 }

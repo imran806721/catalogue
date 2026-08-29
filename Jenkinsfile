@@ -38,10 +38,9 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    sh '''
-                         echo "Building Docker image: catalogue:${appVersion}"
-                         docker build -t catalogue:${appVersion} .
-                    '''
+                    sh """
+                       docker build -t catalogue:${appVersion} .
+                    """
                 }
             }
         }

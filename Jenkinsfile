@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                    sh """
-                       echo "Building catalogue version ${appVersion}"
+                       echo "Building"
                     """
                 }
             }

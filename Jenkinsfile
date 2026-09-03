@@ -60,7 +60,7 @@ pipeline {
         stage('SonarQube Quality Gate') {
             steps {
                 timeout(time: 10, unit: 'MINUTES') {
-                    script {
+                    script { 
                         def qg = waitForQualityGate() // Pauses pipeline
                         if (qg.status != 'OK') {
                             error "Pipeline aborted: ${qg.status}"
@@ -72,7 +72,7 @@ pipeline {
 
         stage('Check Dependabot Alerts') {
             steps {
-                withCredentials([string(credentialsId: 'github_token', variable: 'GH_TOKEN')]) {
+                withCredentials([string(credentialsId: 'github-token', variable: 'GH_TOKEN')]) {
                     sh '''
                         set -e
 

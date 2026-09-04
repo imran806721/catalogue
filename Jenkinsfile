@@ -5,4 +5,9 @@ def configMap = [
     component: "catalogue"
 ]
 
-testPipeline(configMap)
+if (env.BRANCH_NAME.equalsIgnoreCase('main')){
+    echo "we will deal later"
+}
+else {
+    nodejsEKSMain(configMap)
+}

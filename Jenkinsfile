@@ -9,5 +9,5 @@ if (env.BRANCH_NAME.equalsIgnoreCase('main')){
     echo "we will deal later"
 }
 else {
-    nodejsEKSMain(configMap)
+     nodejsEKSPipeline(configMap)
 }

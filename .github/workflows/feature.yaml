@@ -78,4 +78,3 @@ jobs:
       contents: write
       statuses: write
     secrets: inherit
-        

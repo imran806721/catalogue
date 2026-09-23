@@ -8,7 +8,7 @@
 # jobs:
 #   feature-workflow:
 #     if: github.ref_name != 'main'
-#     uses: imran806721/workflows/.github/workflows/nodejs-eks-feature.yaml@main
+#     uses: imran806721-org/workflows/.github/workflows/nodejs-eks-feature.yaml@main
 #     with:
 #       project: roboshop
 #       component: catalogue
@@ -49,7 +49,7 @@ on:
 jobs:
   feature-workflow:
     if: github.ref_name != 'main'
-    uses: imran806721/workflows/.github/workflows/nodejs-eks-feature.yaml@main
+    uses: imran806721-org/workflows/.github/workflows/nodejs-eks-feature.yaml@main
     with:
       project: roboshop
       component: catalogue
@@ -65,7 +65,7 @@ jobs:
   # webhook) to promote an already-approved commit to sit/uat/prod.
   main-workflow:
     if: github.ref_name == 'main'
-    uses: imran806721/workflows/.github/workflows/nodejs-eks-main.yaml@main
+    uses: imran806721-org/workflows/.github/workflows/nodejs-eks-main.yaml@main
     with:
       project: roboshop
       component: catalogue
